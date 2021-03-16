@@ -51,6 +51,7 @@ require([
         $searchQuery.text(res.query);
 
         // Create an <li> element for each result
+        let count = 1;
         res.results.forEach(function (item) {
             var $li = $('<li>', {
                 'class': 'search-results-item'
@@ -60,9 +61,10 @@ require([
 
             var $link = $('<a>', {
                 'href': gitbook.state.basePath + '/' + item.url + '?h=' + encodeURIComponent(res.query),
-                'text': item.title,
+                'text': '[' + count + '] ' + item.title,
                 'data-is-search': 1
             });
+            count++;
 
             if ($link[0].href.split('?')[0] === window.location.href.split('?')[0]) {
                 $link[0].setAttribute('data-need-reload', 1);
