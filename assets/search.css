@@ -53,3 +53,9 @@
 #book-search-results.search-plus .search-results .has-results .search-results-item {
     color: inherit;
 }
+
+#book-search-results-item p {
+    background-color: #f0f0f0;
+    padding: 0.25em;
+    border: 1px solid #ccc;
+}
